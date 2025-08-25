@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+  <title>Liam's First Birthday - An Ocean Adventure!</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #e0f2f7; /* Light blue background */
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden; /* Prevent horizontal scrollbar */
+    }
+
+    h1 {
+      color: #008080; /* Teal heading */
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 0.75em;
+    }
+
+    .octopus {
+      width: 150px;
+      margin-top: 1em;
+    }
+
+    .ocean-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://th.bing.com/th/id/R.ca53a97c25e254372b2b95f48064d793?rik=TciJPKcw5jKj0w&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f7%2f7%2f7%2f689886-best-cartoon-ocean-wallpaper-1920x1080-notebook.jpg&ehk=oizwEWoqYc3g7e9yg4ySqNuV8mP21z2sP0aTvP1tQO4%3d&risl=&pid=ImgRaw&r=0'); /* Replace with a ocean image URL*/
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .rsvp-form {
+      margin-top: 20px;
+      text-align: left;
+      width: 300px; /* Adjust width as needed */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .rsvp-form label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .rsvp-form input[type="text"],
+    .rsvp-form input[type="email"],
+    .rsvp-form select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* Ensures padding is included in width */
+    }
+
+    .rsvp-form input[type="submit"] {
+      background-color: #008080;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .rsvp-form input[type="submit"]:hover {
+      background-color: #006666;
+    }
+
+    .fish {
+      position: absolute;
+      width: 50px; /* Adjust size as needed */
+      animation: swim 10s linear infinite; /* Adjust duration as needed */
+    }
+
+    .fish1 {
+      top: 20%;
+      left: 0;
+    }
+
+    .fish2 {
+      top: 50%;
+      right: 0;
+      animation-delay: -3s;
+    }
+
+    .fish3 {
+      top: 70%;
+      left: 10%;
+      animation-delay: -5s;
+    }
+
+    @keyframes swim {
+      0% { transform: translateX(-100px); }
+      100% { transform: translateX(calc(100vw + 100px)); }
+    }
+
+    .treasure-chest {
+      width: 100px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .gift-suggestions {
+      display: none;
+      margin-top: 10px;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .gift-suggestions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .gift-suggestions li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body style="height: 100%;">
+  <div class="ocean-background"></div>
+
+  <img src="https://www.pngmart.com/files/6/Cartoon-Fish-PNG-Transparent-Image.png" alt="Fish" class="fish fish1">
+    <img src="https://www.pngmart.com/files/6/Cartoon-Fish-PNG-Transparent-Image.png" alt="Fish" class="fish fish2">
+    <img src="https://www.pngmart.com/files/6/Cartoon-Fish-PNG-Transparent-Image.png" alt="Fish" class="fish fish3">
+
+  <h1>Liam's First Birthday!</h1>
+  <p>Join us for an underwater adventure as we celebrate Liam turning one!</p>
+  <img src="https://www.transparentpng.com/thumb/octopus/octopus-cartoon-clipart-hq-9pP05l.png" alt="Cute Octopus" class="octopus">
+  <p>Date: 20th of September</p>
+  <p>Time: 2:00 PM</p>
+  <p>Location: Coram Fields</p>
+
+  <div class="rsvp-form">
+    <h2>RSVP</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="attending">Will you be attending?</label>
+      <select id="attending" name="attending">
+        <option value="yes">Yes, I'll be there!</option>
+        <option value="no">No, I can't make it.</option>
+      </select>
+
+      <label for="guests">Number of Guests (including yourself):</label>
+      <input type="text" id="guests" name="guests" value="1" >
+
+      <input type="submit" value="Submit RSVP">
+    </form>
+  </div>
+
+  <h2>Gift Suggestions</h2>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div style="text-align: center;">
+      <img src="https://www.freepnglogos.com/uploads/treasure-chest-png/treasure-chest-pirate-chest-0.png" alt="Treasure Chest" class="treasure-chest" onclick="toggleGifts('gifts1')">
+      <div class="gift-suggestions" id="gifts1">
+        <ul>
+          <li>Board Books</li>
+          <li>Stacking Cups</li>
+          <li>Soft Toys</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://www.freepnglogos.com/uploads/treasure-chest-png/treasure-chest-pirate-chest-0.png" alt="Treasure Chest" class="treasure-chest" onclick="toggleGifts('gifts2')">
+      <div class="gift-suggestions" id="gifts2">
+        <ul>
+          <li>Musical Instruments (e.g., shaker, xylophone)</li>
+          <li>Building Blocks</li>
+          <li>Bath Toys</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="https://www.freepnglogos.com/uploads/treasure-chest-png/treasure-chest-pirate-chest-0.png" alt="Treasure Chest" class="treasure-chest" onclick="toggleGifts('gifts3')">
+      <div class="gift-suggestions" id="gifts3">
+        <ul>
+          <li>Personalized Story Book</li>
+          <li>Clothing (12-18 months)</li>
+          <li>Donation to a children's charity in Liam's name</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleGifts(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
